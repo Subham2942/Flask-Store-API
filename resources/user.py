@@ -47,6 +47,7 @@ class UserLogin(MethodView):
         
 @blp.route("/logout")
 class userLogout(MethodView):
+    @jwt_required()
     def post(self):
         jti = get_jwt().get("jti")
         BLOCKLIST.add(jti)
@@ -55,7 +56,7 @@ class userLogout(MethodView):
 class TokenRefresh(MethodView):
     def post(self):
         current_user = get_jwt_identity()
-        new_token = create_refresh_token(identity=user.id, fresh=False)
+        new_token = create_refresh_token(identity=current_useruser.id, fresh=False)
         return {"access_token": new_token}
 
 @blp.route("/user/<int:user_id>")
@@ -66,7 +67,7 @@ class User(MethodView):
     sake of demonstration in this course, it can be useful
     when we are manipulating data regarding the users.
     """
-    @jwt_required
+    @jwt_required()
     @blp.response(200, UserSchema)
     def get(self, user_id):
         user = UserModel.query.get_or_404(user_id)
