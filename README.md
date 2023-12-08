@@ -1,9 +1,9 @@
 
-#Flask-REST-API
+# Flask-REST-API
 
 This is a Flask application that serves as a RESTful API for managing items, stores, tags, and user authentication. The API provides functionality for tasks such as retrieving, creating, updating, and deleting items and stores. It enables the association of tags with stores, linking items to tags, and supports user registration, login, and logout processes. Implemented with Flask-Smorest for API documentation and validation, Flask-JWT-Extended for user authentication using JSON Web Tokens (JWT), and SQLAlchemy for database interactions, the application is organized using Flask Blueprints for modularity and scalability. This backend system is designed for use in scenarios such as inventory management or e-commerce platforms.
 
-#### `GET /items/<int:item_id>`
+### `GET /items/<int:item_id>`
 - **Description:** Retrieves details of a specific item by its ID.
 - **Method:** GET
 - **Parameters:**
@@ -12,7 +12,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Item details in the format specified by the `ItemSchema`.
 
-#### `DELETE /items/<int:item_id>`
+### `DELETE /items/<int:item_id>`
 - **Description:** Deletes a specific item by its ID. Requires admin privileges.
 - **Method:** DELETE
 - **Parameters:**
@@ -23,7 +23,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Message indicating successful deletion.
 
-#### `PUT /items/<int:item_id>`
+### `PUT /items/<int:item_id>`
 - **Description:** Updates or creates an item by its ID.
 - **Method:** PUT
 - **Parameters:**
@@ -36,14 +36,14 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Updated item details in the format specified by `ItemSchema`.
 
-#### `GET /item`
+### `GET /item`
 - **Description:** Retrieves a list of all items.
 - **Method:** GET
 - **Response:**
   - Status Code: 200 (OK)
   - Body: List of items in the format specified by `ItemSchema` (many=True).
 
-#### `POST /item`
+### `POST /item`
 - **Description:** Creates a new item.
 - **Method:** POST
 - **Authorization:**
