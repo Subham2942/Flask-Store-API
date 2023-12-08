@@ -56,7 +56,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
 
 
 
-#### `GET /store/<int:store_id>`
+### `GET /store/<int:store_id>`
 - **Description:** Retrieves details of a specific store by its ID.
 - **Method:** GET
 - **Parameters:**
@@ -65,7 +65,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Store details in the format specified by the `StoreSchema`.
 
-#### `DELETE /store/<int:store_id>`
+### `DELETE /store/<int:store_id>`
 - **Description:** Deletes a specific store by its ID.
 - **Method:** DELETE
 - **Parameters:**
@@ -74,14 +74,14 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Message indicating successful deletion.
 
-#### `GET /store`
+### `GET /store`
 - **Description:** Retrieves a list of all stores.
 - **Method:** GET
 - **Response:**
   - Status Code: 200 (OK)
   - Body: List of stores in the format specified by `StoreSchema` (many=True).
 
-#### `POST /store`
+### `POST /store`
 - **Description:** Creates a new store.
 - **Method:** POST
 - **Request Payload:**
@@ -91,7 +91,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Body: Details of the newly created store in the format specified by `StoreSchema`.
 
 
-#### `GET /store/<int:store_id>/tag`
+### `GET /store/<int:store_id>/tag`
 - **Description:** Retrieves a list of tags associated with a specific store.
 - **Method:** GET
 - **Parameters:**
@@ -100,7 +100,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: List of tags in the format specified by `TagSchema` (many=True).
 
-#### `POST /store/<int:store_id>/tag`
+### `POST /store/<int:store_id>/tag`
 - **Description:** Creates a new tag for a specific store.
 - **Method:** POST
 - **Parameters:**
@@ -111,7 +111,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 201 (Created)
   - Body: Details of the newly created tag in the format specified by `TagSchema`.
 
-#### `POST /item/<int:item_id>/tag/<int:tag_id>`
+### `POST /item/<int:item_id>/tag/<int:tag_id>`
 - **Description:** Links a tag to an item.
 - **Method:** POST
 - **Parameters:**
@@ -121,7 +121,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Details of the linked tag in the format specified by `TagSchema`.
 
-#### `DELETE /item/<int:item_id>/tag/<int:tag_id>`
+### `DELETE /item/<int:item_id>/tag/<int:tag_id>`
 - **Description:** Unlinks a tag from an item.
 - **Method:** DELETE
 - **Parameters:**
@@ -131,7 +131,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Message indicating successful unlinking, along with item and tag details.
 
-#### `GET /tag/<int:tag_id>`
+### `GET /tag/<int:tag_id>`
 - **Description:** Retrieves details of a specific tag by its ID.
 - **Method:** GET
 - **Parameters:**
@@ -140,7 +140,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Tag details in the format specified by the `TagSchema`.
 
-#### `DELETE /tag/<int:tag_id>`
+### `DELETE /tag/<int:tag_id>`
 - **Description:** Deletes a specific tag by its ID if no items are tagged with it.
 - **Method:** DELETE
 - **Parameters:**
@@ -150,7 +150,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Body: Message indicating successful deletion if no items are tagged with the specified tag.
 
 
-#### `POST /register`
+### `POST /register`
 - **Description:** Registers a new user.
 - **Method:** POST
 - **Request Payload:**
@@ -159,7 +159,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 201 (Created)
   - Body: Message indicating successful user creation.
 
-#### `POST /login`
+### `POST /login`
 - **Description:** Logs in a user and provides access and refresh tokens.
 - **Method:** POST
 - **Request Payload:**
@@ -168,7 +168,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Access and refresh tokens.
 
-#### `POST /logout`
+### `POST /logout`
 - **Description:** Logs out a user by adding their JWT token to a blocklist.
 - **Method:** POST
 - **Authorization:**
@@ -177,14 +177,14 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: Message indicating successful logout.
 
-#### `POST /refresh`
+### `POST /refresh`
 - **Description:** Obtains a new access token using a refresh token.
 - **Method:** POST
 - **Response:**
   - Status Code: 200 (OK)
   - Body: New access token.
 
-#### `GET /user/<int:user_id>`
+### `GET /user/<int:user_id>`
 - **Description:** Retrieves details of a specific user by their ID.
 - **Method:** GET
 - **Parameters:**
@@ -195,7 +195,7 @@ This is a Flask application that serves as a RESTful API for managing items, sto
   - Status Code: 200 (OK)
   - Body: User details in the format specified by `UserSchema`.
 
-#### `DELETE /user/<int:user_id>`
+### `DELETE /user/<int:user_id>`
 - **Description:** Deletes a specific user by their ID.
 - **Method:** DELETE
 - **Parameters:**
